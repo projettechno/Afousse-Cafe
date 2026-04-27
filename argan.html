@@ -57,9 +57,12 @@
 </div>
 
 <nav class="navbar">
-  <div class="nav-inner">
+  <div class="nav-inner" style="position:relative">
     <a class="nav-logo" href="index.html"><em>Afousse</em> Café</a>
-    <div class="nav-links">
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a class="nav-link" href="menu.html"><span class="nav-dot"></span><span id="nav-menu">Menu</span></a>
       <a class="nav-link active" href="argan.html"><span class="nav-dot"></span><span id="nav-argan">Argan Boutique</span></a>
       <a class="nav-link" href="booking.html"><span class="nav-dot"></span><span id="nav-book">Book Now</span></a>
@@ -195,5 +198,9 @@
 </footer>
 
 <script src="js/app.js"></script>
+<a class="floating-cart" href="booking.html">
+  🛒 <span class="en">View Booking</span><span class="fr" style="display:none">Voir Réservation</span>
+  <span id="cart-badge"></span>
+</a>
 </body>
 </html>
