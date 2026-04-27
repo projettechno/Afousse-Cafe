@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Afousse Café</title>
+  <meta name="description" content="Explore our full Moroccan menu — tajines, mint tea, couscous, salads and pastries. Select items and book your group order online.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="toast-wrap"><div class="toast" id="toast"></div></div>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><em>Afousse</em> Café</a>
+    <div class="nav-links">
+      <a class="nav-link active" href="menu.html"><span class="nav-dot"></span><span id="nav-menu">Menu</span></a>
+      <a class="nav-link" href="argan.html"><span class="nav-dot"></span><span id="nav-argan">Argan Boutique</span></a>
+      <a class="nav-link" href="booking.html"><span class="nav-dot"></span><span id="nav-book">Book Now</span></a>
+      <a class="nav-link" href="about.html"><span class="nav-dot"></span><span id="nav-about">About</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="sec-head">
+    <div class="sec-eyebrow en">Café & Restaurant</div>
+    <div class="sec-eyebrow fr" style="display:none">Café & Restaurant</div>
+    <h2 class="en">Our Menu</h2>
+    <h2 class="fr" style="display:none">Notre Menu</h2>
+    <p class="en">Tap any item to add it to your group booking. Adjust quantities, then proceed to send your order.</p>
+    <p class="fr" style="display:none">Touchez un article pour l'ajouter à votre réservation. Ajustez les quantités puis envoyez votre commande.</p>
+  </div>
+
+  <!-- HOT DRINKS -->
+  <div class="cat-block">
+    <div class="cat-label"><span class="cat-label-text en">Hot Drinks</span><span class="cat-label-text fr" style="display:none">Boissons Chaudes</span><div class="cat-label-line"></div></div>
+    <div class="menu-grid">
+
+      <div class="menu-card" data-id="mint-tea" data-name="Moroccan Mint Tea" data-namefr="Thé à la Menthe" data-price="15 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🫖</span>
+        <div class="card-name en">Moroccan Mint Tea</div><div class="card-name fr" style="display:none">Thé à la Menthe</div>
+        <div class="card-desc en">Traditional fresh mint, glass-poured</div><div class="card-desc fr" style="display:none">Menthe fraîche, service en verre</div>
+        <div class="card-price">15 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="coffee" data-name="Moroccan Coffee" data-namefr="Café Marocain" data-price="20 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">☕</span>
+        <div class="card-name en">Moroccan Coffee</div><div class="card-name fr" style="display:none">Café Marocain</div>
+        <div class="card-desc en">Spiced with cardamom & cinnamon</div><div class="card-desc fr" style="display:none">Épicé cardamome & cannelle</div>
+        <div class="card-price">20 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="herbal" data-name="Atlas Herbal Tea" data-namefr="Tisane de l'Atlas" data-price="15 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🌿</span>
+        <div class="card-name en">Atlas Herbal Tea</div><div class="card-name fr" style="display:none">Tisane de l'Atlas</div>
+        <div class="card-desc en">Local mountain herb blend</div><div class="card-desc fr" style="display:none">Mélange d'herbes de montagne</div>
+        <div class="card-price">15 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COLD DRINKS -->
+  <div class="cat-block">
+    <div class="cat-label"><span class="cat-label-text en">Cold Drinks</span><span class="cat-label-text fr" style="display:none">Boissons Fraîches</span><div class="cat-label-line"></div></div>
+    <div class="menu-grid">
+
+      <div class="menu-card" data-id="orange" data-name="Fresh Orange Juice" data-namefr="Jus d'Orange Frais" data-price="25 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🍊</span>
+        <div class="card-name en">Fresh Orange Juice</div><div class="card-name fr" style="display:none">Jus d'Orange Frais</div>
+        <div class="card-desc en">Freshly squeezed Moroccan oranges</div><div class="card-desc fr" style="display:none">Oranges marocaines fraîches pressées</div>
+        <div class="card-price">25 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="water" data-name="Mineral Water" data-namefr="Eau Minérale" data-price="8 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">💧</span>
+        <div class="card-name en">Mineral Water</div><div class="card-name fr" style="display:none">Eau Minérale</div>
+        <div class="card-desc en">Still or sparkling, 50cl</div><div class="card-desc fr" style="display:none">Plate ou gazeuse, 50cl</div>
+        <div class="card-price">8 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOROCCAN DISHES -->
+  <div class="cat-block">
+    <div class="cat-label"><span class="cat-label-text en">Moroccan Dishes</span><span class="cat-label-text fr" style="display:none">Plats Marocains</span><div class="cat-label-line"></div></div>
+    <div class="menu-grid">
+
+      <div class="menu-card" data-id="tajine-chicken" data-name="Chicken Tajine" data-namefr="Tajine Poulet" data-price="80 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🍲</span>
+        <div class="card-name en">Chicken Tajine</div><div class="card-name fr" style="display:none">Tajine Poulet</div>
+        <div class="card-desc en">Slow-cooked with olives & preserved lemon</div><div class="card-desc fr" style="display:none">Mijoté, olives & citron confit</div>
+        <div class="card-price">80 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="tajine-veg" data-name="Vegetable Tajine" data-namefr="Tajine Légumes" data-price="65 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🥕</span>
+        <div class="card-name en">Vegetable Tajine</div><div class="card-name fr" style="display:none">Tajine Légumes</div>
+        <div class="card-desc en">Seasonal Atlas vegetables</div><div class="card-desc fr" style="display:none">Légumes de saison de l'Atlas</div>
+        <div class="card-price">65 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="couscous" data-name="Friday Couscous" data-namefr="Couscous Vendredi" data-price="90 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🫕</span>
+        <div class="card-name en">Friday Couscous</div><div class="card-name fr" style="display:none">Couscous Vendredi</div>
+        <div class="card-desc en">Lamb, seven vegetables & broth</div><div class="card-desc fr" style="display:none">Agneau, sept légumes, bouillon</div>
+        <div class="card-price">90 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="pastilla" data-name="Pastilla" data-namefr="Pastilla" data-price="55 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🥧</span>
+        <div class="card-name en">Pastilla</div><div class="card-name fr" style="display:none">Pastilla</div>
+        <div class="card-desc en">Crispy pie with pigeon & almonds</div><div class="card-desc fr" style="display:none">Feuilleté, pigeon & amandes</div>
+        <div class="card-price">55 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="salad" data-name="Moroccan Salad" data-namefr="Salade Marocaine" data-price="35 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🥗</span>
+        <div class="card-name en">Moroccan Salad</div><div class="card-name fr" style="display:none">Salade Marocaine</div>
+        <div class="card-desc en">Tomato, cucumber, herbs, olive oil</div><div class="card-desc fr" style="display:none">Tomate, concombre, herbes</div>
+        <div class="card-price">35 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="harira" data-name="Harira Soup" data-namefr="Soupe Harira" data-price="25 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🍜</span>
+        <div class="card-name en">Harira Soup</div><div class="card-name fr" style="display:none">Soupe Harira</div>
+        <div class="card-desc en">Traditional tomato & lentil soup</div><div class="card-desc fr" style="display:none">Soupe tomate & lentilles</div>
+        <div class="card-price">25 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SWEETS -->
+  <div class="cat-block">
+    <div class="cat-label"><span class="cat-label-text en">Sweets & Bread</span><span class="cat-label-text fr" style="display:none">Sucreries & Pain</span><div class="cat-label-line"></div></div>
+    <div class="menu-grid">
+
+      <div class="menu-card" data-id="bread" data-name="Moroccan Bread" data-namefr="Pain Marocain" data-price="10 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🫓</span>
+        <div class="card-name en">Moroccan Bread</div><div class="card-name fr" style="display:none">Pain Marocain</div>
+        <div class="card-desc en">Freshly baked khobz</div><div class="card-desc fr" style="display:none">Khobz fraîchement cuit</div>
+        <div class="card-price">10 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+      <div class="menu-card" data-id="pastries" data-name="Moroccan Pastries" data-namefr="Pâtisseries Marocaines" data-price="30 MAD" onclick="toggleItem(this)">
+        <div class="check-mark"><svg viewBox="0 0 12 10"><polyline points="1,5 4.5,8.5 11,1"/></svg></div>
+        <span class="card-emoji">🍡</span>
+        <div class="card-name en">Moroccan Pastries</div><div class="card-name fr" style="display:none">Pâtisseries Marocaines</div>
+        <div class="card-desc en">Chebakia, kaab el ghzal, briouats</div><div class="card-desc fr" style="display:none">Chebakia, kaab el ghzal, briouats</div>
+        <div class="card-price">30 MAD</div>
+        <div class="qty-row" style="display:none"><button class="qty-btn" onclick="chQty(event,this,-1)">−</button><span class="qty-val">1</span><button class="qty-btn" onclick="chQty(event,this,1)">+</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <a class="proceed-btn" href="booking.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+    <span class="en">Proceed to Booking</span>
+    <span class="fr" style="display:none">Passer à la Réservation</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><em>Afousse</em> Café</div>
+      <div class="footer-tagline en">A Moroccan mountain café where flavour meets stunning views.</div>
+      <div class="footer-tagline fr" style="display:none">Un café marocain de montagne où saveurs et vues se rencontrent.</div>
+    </div>
+    <div class="footer-col">
+      <h4 class="en">Pages</h4><h4 class="fr" style="display:none">Pages</h4>
+      <a href="index.html" class="en">Home</a><a href="index.html" class="fr" style="display:none">Accueil</a>
+      <a href="menu.html" class="en">Menu</a><a href="menu.html" class="fr" style="display:none">Menu</a>
+      <a href="argan.html" class="en">Argan Boutique</a><a href="argan.html" class="fr" style="display:none">Boutique Argan</a>
+      <a href="booking.html" class="en">Book Now</a><a href="booking.html" class="fr" style="display:none">Réserver</a>
+      <a href="about.html" class="en">About Us</a><a href="about.html" class="fr" style="display:none">À Propos</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="en">Contact</h4><h4 class="fr" style="display:none">Contact</h4>
+      <p>WhatsApp: +212 639 339 952</p>
+      <p>Email: afoussecafe@gmail.com</p>
+      <p id="footer-hours">Open daily: 8:00 AM – 7:00 PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span id="footer-rights">© 2025 Afousse Café. All rights reserved.</span>
+    <span id="footer-built">Built with love in the Atlas Mountains.</span>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
